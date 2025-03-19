@@ -195,10 +195,7 @@ random_search = RandomizedSearchCV(estimator=model,
                                    scoring='accuracy')  # Add scoring='accuracy'
 
 
-# **Change here:** Use flow_from_directory (or flow) to get data for fitting
-# Assuming 'train_datagen' is an ImageDataGenerator for your training data
-# and 'train_dir' is the path to your training data directory
-# Adjust parameters as needed for your specific data and ImageDataGenerator setup
+
 train_generator= train_datagen.flow_from_directory(
     train_dir,  # Replace with your training data directory
     target_size=(224, 224),  # Adjust if needed
