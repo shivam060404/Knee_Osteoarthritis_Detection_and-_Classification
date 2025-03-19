@@ -89,7 +89,7 @@ def load_x_ray_data(train_dir, val_dir, test_dir):
     }
     return x_ray_data
 
-x_ray_data = load_x_ray_data(train_dir, val_dir, test_dir)  # Assuming you have a function to load X-ray data
+x_ray_data = load_x_ray_data(train_dir, val_dir, test_dir)  
 
 print(x_ray_data)
 
@@ -162,7 +162,7 @@ from tensorflow.keras.optimizers import Adam, RMSprop
 from tensorflow import keras
 from tensorflow.keras import layers, models
 
-# ... (Your existing code for conv_base definition and param_dist) ...
+
 
 # Define the create_model function that returns a compiled Keras model
 def create_model(optimizer='adam',  # Default optimizer
@@ -204,11 +204,7 @@ train_generator= train_datagen.flow_from_directory(
 )
 
 
-# Fit the random search to the data
-# **Change here:** Pass X and y to fit, unpacking them from the generator
-# **Note:** This assumes that train_generator yields (X, y) tuples
-# You might need to adjust this if your generator yields something different
-# random_search_result = random_search.fit(train_generator)
+
 for i in train_generator:
     random_search_result = random_search.fit(i)
     break  # This will only use the first batch for fitting, adjust if needed
